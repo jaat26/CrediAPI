@@ -1,3 +1,8 @@
+C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.csprojAssemblyReference.cache
+C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.AssemblyInfoInputs.cache
+C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.AssemblyInfo.cs
+C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.csproj.CoreCompileInputs.cache
+C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -7,6 +12,10 @@ C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\CrediAPI.runtimeconfig.js
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\CrediAPI.runtimeconfig.dev.json
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\CrediAPI.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\CrediAPI.pdb
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
@@ -32,6 +41,8 @@ C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Conf
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
@@ -140,10 +151,6 @@ C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.AssemblyInfoInputs.cache
-C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.AssemblyInfo.cs
-C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.csproj.CoreCompileInputs.cache
-C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.RazorTargetAssemblyInfo.cache
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.csproj.CopyComplete
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\staticwebassets\CrediAPI.StaticWebAssets.Manifest.cache
@@ -151,4 +158,3 @@ C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\staticwebassets\CrediAPI.
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.dll
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.pdb
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.genruntimeconfig.cache
-C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.csprojAssemblyReference.cache
