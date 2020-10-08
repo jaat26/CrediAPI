@@ -2,9 +2,6 @@ using CrediAPI.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Azure.Identity;
-using Microsoft.Extensions.Configuration;
-using System;
 
 namespace CrediAPI
 {
@@ -20,11 +17,9 @@ namespace CrediAPI
         private static void RunSeeding(IHost host)
         {
             IServiceScopeFactory scopeFactory = host.Services.GetService<IServiceScopeFactory>();
-            using (IServiceScope scope = scopeFactory.CreateScope())
-            {
-                SeedDb seeder = scope.ServiceProvider.GetService<SeedDb>();
-                seeder.SeedAsync().Wait();
-            }
+            using IServiceScope scope = scopeFactory.CreateScope();
+            SeedDb seeder = scope.ServiceProvider.GetService<SeedDb>();
+            seeder.SeedAsync().Wait();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args)

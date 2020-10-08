@@ -32,8 +32,8 @@ namespace CrediAPI.Controllers
         }
 
         [HttpPost]
-        [Route("CreateToken")]
-        public async Task<IActionResult> CreateToken([FromBody] LoginRequest request)
+        [Route("Login")]
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             if (!ModelState.IsValid)
             {
@@ -99,30 +99,6 @@ namespace CrediAPI.Controllers
         }
 
 
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        [HttpPost]
-        public async Task<IActionResult> GetUser()
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(new Response { 
-                    IsSuccess=false,
-                    Message="Bad request",
-                    Data = ModelState
-                });
-            }
-
-            string email = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
-            User user = await _userHelper.GetUserAsync(email);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return Ok(user);
-        }
-
-
         [HttpPost]
         [Route("Register")]
         public async Task<IActionResult> PostUser([FromBody] UserRequest request)
@@ -176,6 +152,7 @@ namespace CrediAPI.Controllers
 
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut]
+        [Route("Update")]
         public async Task<IActionResult> PutUser([FromBody] UserEditRequest request)
         {
             if (!ModelState.IsValid)
