@@ -1,13 +1,13 @@
 ﻿using CrediAPI.Data;
 using CrediAPI.Data.Entities;
 using CrediAPI.Models.Request;
+using CrediAPI.Models.Response;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Net;
 using System.Threading.Tasks;
 
 namespace CrediAPI.Controllers
@@ -25,21 +25,32 @@ namespace CrediAPI.Controllers
 
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<IEnumerable<CreditCard>>> GetCreditCards()
         {
             try
             {
-                return Ok(await _context.CreditCards.ToListAsync());
+                return Ok(new Response
+                {
+                    IsSuccess = true,
+                    Message = "Successful operation",
+                    Data = await _context.CreditCards.ToListAsync()
+                });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                });
             }
 
         }
 
 
         [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<CreditCard>> GetCreditCard(int id)
         {
             try
@@ -47,14 +58,27 @@ namespace CrediAPI.Controllers
                 CreditCard creditCard = await _context.CreditCards.FindAsync(id);
                 if (creditCard == null)
                 {
-                    return NotFound();
+                    return NotFound(new Response
+                    {
+                        IsSuccess = false,
+                        Message = "Credit card not foud"
+                    });
                 }
 
-                return Ok(creditCard);
+                return Ok(new Response
+                {
+                    IsSuccess = true,
+                    Message = "Successful operation",
+                    Data = creditCard
+                });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message
+                });
             }
         }
 
@@ -65,13 +89,22 @@ namespace CrediAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Bad request",
+                    Data = ModelState
+                });
             }
 
             CreditCard card = await _context.CreditCards.FindAsync(id);
             if (card == null)
             {
-                return NotFound();
+                return NotFound(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Credit card not found"
+                });
             }
 
             card.CardOwnerFirstname = request.CardOwnerFirstname;
@@ -88,7 +121,12 @@ namespace CrediAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                    Data = ModelState
+                });
             }
         }
 
@@ -99,7 +137,12 @@ namespace CrediAPI.Controllers
         {
             if (!ModelState.IsValid)
             {
-                BadRequest(ModelState);
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Bad request",
+                    Data = ModelState
+                });
             }
 
             CreditCard card = new CreditCard
@@ -120,7 +163,12 @@ namespace CrediAPI.Controllers
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                    Data = ModelState
+                });
             }
         }
 
@@ -132,7 +180,11 @@ namespace CrediAPI.Controllers
             CreditCard creditCard = await _context.CreditCards.FindAsync(id);
             if (creditCard == null)
             {
-                return NotFound();
+                return NotFound(new Response
+                {
+                    IsSuccess = false,
+                    Message = "Credit card not found"
+                });
             }
 
             try
@@ -140,11 +192,21 @@ namespace CrediAPI.Controllers
                 _context.CreditCards.Remove(creditCard);
                 await _context.SaveChangesAsync();
 
-                return Ok(creditCard);
+                return Ok(new Response
+                {
+                    IsSuccess = true,
+                    Message = "Successful operation",
+                    Data = creditCard
+                });
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest(new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                    Data = ModelState
+                });
             }
         }
     }

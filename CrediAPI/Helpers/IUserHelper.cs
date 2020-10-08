@@ -1,4 +1,5 @@
 ﻿using CrediAPI.Data.Entities;
+using CrediAPI.Models;
 using CrediAPI.Models.Request;
 using Microsoft.AspNetCore.Identity;
 using System.Threading.Tasks;
@@ -22,5 +23,9 @@ namespace CrediAPI.Helpers
         Task LogoutAsync();
 
         Task<SignInResult> ValidatePasswordAsync(User user, string password);
+
+        Task<IdentityResult> UpdateUserAsync(User user);
+
+        Task<IdentityResult> ChangePasswordAsync(User user, string oldPassword, string newPassword);
     }
 }
