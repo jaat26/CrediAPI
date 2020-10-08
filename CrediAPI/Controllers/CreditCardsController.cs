@@ -1,10 +1,13 @@
 ﻿using CrediAPI.Data;
 using CrediAPI.Data.Entities;
 using CrediAPI.Models.Request;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Threading.Tasks;
 
 namespace CrediAPI.Controllers
@@ -20,6 +23,7 @@ namespace CrediAPI.Controllers
             _context = context;
         }
 
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CreditCard>>> GetCreditCards()
         {
@@ -33,6 +37,7 @@ namespace CrediAPI.Controllers
             }
 
         }
+
 
         [HttpGet("{id}")]
         public async Task<ActionResult<CreditCard>> GetCreditCard(int id)
@@ -53,6 +58,8 @@ namespace CrediAPI.Controllers
             }
         }
 
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCreditCard(int id, CreditCardRequest request)
         {
@@ -83,9 +90,10 @@ namespace CrediAPI.Controllers
             {
                 return BadRequest(ex.Message);
             }
-
         }
 
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPost]
         public async Task<ActionResult<CreditCard>> PostCreditCard(CreditCardRequest request)
         {
@@ -114,10 +122,10 @@ namespace CrediAPI.Controllers
             {
                 return BadRequest(ex.Message);
             }
-
-
         }
 
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete("{id}")]
         public async Task<ActionResult<CreditCard>> DeleteCreditCard(int id)
         {

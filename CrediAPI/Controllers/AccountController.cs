@@ -1,7 +1,8 @@
 ﻿using CrediAPI.Data.Entities;
 using CrediAPI.Helpers;
 using CrediAPI.Models.Request;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -64,12 +65,33 @@ namespace CrediAPI.Controllers
                     }
                     else
                     {
-                        var p = result;
+                        Microsoft.AspNetCore.Identity.SignInResult p = result;
                     }
                 }
             }
 
             return BadRequest();
         }
+
+
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [HttpPost]
+        [Route("GetUserByEmail")]
+        public async Task<IActionResult> GetUserByEmail([FromBody] EmailRequest request)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            User user = await _userHelper.GetUserAsync(request.Email);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(user);
+        }
+
     }
 }
