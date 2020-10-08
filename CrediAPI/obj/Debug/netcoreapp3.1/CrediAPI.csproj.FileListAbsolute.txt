@@ -165,5 +165,10 @@ C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Properties\ServiceDepende
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\CreditCardApi - Web Deploy\secrets1.arm.json
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
 C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Azure.Security.KeyVault.Secrets.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Proyectos\CrediAPI\CrediAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.csproj.CoreCompileInputs.cache
+C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Proyectos\CrediAPI\CrediAPI\obj\Debug\netcoreapp3.1\CrediAPI.MvcApplicationPartsAssemblyInfo.cache

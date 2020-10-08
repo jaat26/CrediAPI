@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 
 namespace CrediAPI
@@ -57,9 +58,18 @@ namespace CrediAPI
 
             services.AddScoped<SeedDb>();
             services.AddScoped<IUserHelper, UserHelper>();
-
-
             services.AddControllers();
+
+            // Configurar Swagger para documentacion de API's -- Nuget: Swashbuckle.AspNetCore --
+            services.AddSwaggerGen(cfg =>
+            {
+                cfg.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Title = "Servicios para mantenimiento de Tarjetas de Créditos",
+                    Version = "v1"
+                });
+                cfg.CustomSchemaIds(cfg => cfg.FullName);
+            });
         }
 
 
@@ -81,6 +91,12 @@ namespace CrediAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            // Configurar Swagger para documentacion de API's -- Nuget: Swashbuckle.AspNetCore --
+            app.UseSwagger();
+            app.UseSwaggerUI(cfg => {
+                cfg.SwaggerEndpoint("/swagger/v1/swagger.json", "Cursos Online v1");
             });
         }
     }
